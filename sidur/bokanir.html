@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="is">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <body>
+        <main id="bokanir">
+            <h1>Bóka ferð</h1>
+            <form>
+
+                <h2>Ferð</h2>
+
+                <label for="trip">Hvaða ferð viljið þið skrá ykkur á?</label>
+                <select id="trip" name="trip" required>
+                    <option value="">-- Veldu ferð --</option>
+                    <option value="joklaklifur">Jöklaklifur</option>
+                    <option value="gonguferd">Róleg gönguferð á Suðurlandi</option>
+                    <option value="gullnihringurinn">Gullnihringurinn</option>
+                    <option value="silfurkassinn">Silfurkassinn</option>
+                    <option value="bronsthrihyrningurinn">Bronsþríhyrningurinn</option>
+                    <option value="kofunarferd">Köfunarferð</option>
+                    <option value="nordurljos">Norðurljósaferð</option>
+                    <option value="reykjavikurrölt">Reykjavíkurrölt</option>
+                </select>
+
+
+                <h2>Hópur</h2>
+
+                <label for="people">Fjöldi í hóp</label>
+                <input type="number" id="people" name="people" min="1" max="20" required>
+
+
+                <label for="group_info">Upplýsingar um hóp</label>
+                <label>Hver er reynsla hópsins?</label>
+                <input id="group_info" name="group_info" required placeholder="Góð, Ágæt, Ekki Sterk, Enginn"></input>
+
+
+                <label for="email">Netfang tengiliðar</label>
+                <input type="email" id="email" name="email" required placeholder="example@example.com">
+
+
+                <label for="phone">Símanúmer</label>
+                <input type="simi" id="simi" name="simi" placeholder="000-0000">
+
+
+                <h2>Dagsetning og tími</h2>
+
+                <label for="date">Hvenær viljið þið koma?</label>
+                <input type="date" id="date" name="date">
+
+
+                <label for="time">Hvaða tíma?</label>
+                <select id="time" name="time" required>
+                    <option value="">-- Veldu tíma --</option>
+                    <option value="fyrir-hadegi">Fyrir hádegi</option>
+                    <option value="eftir-hadegi">Eftir hádegi</option>
+                    <option value="kvold">Kvöld</option>
+                </select>
+
+
+                <h2>Bóka</h2>
+
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">
+                    Ég samþykki
+                </label>
+
+                <br><br>
+
+                <button type="submit">Panta og greiða</button>
+
+            </form>
+
+            <p><a href="../index.html">Aftur á forsíðu</a>.</p>
+        </main>
+    </body>
+</html>
