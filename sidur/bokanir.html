@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="is">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="../styles.css">
+        <title>
+            Bókaðu ferðirnar þína hérna.
+        </title>
+    </head>
     <body>
+        <header>
+            <h1>Skráning í ferð</h1>
+
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Forsíða</a></li>
+                    <li><a href="um.html">Um fyrirtækið</a></li>
+                    <li><a href="ferdir.html">Ferðir</a></li>
+                    <li><a href="bokanir.html" aria-current="page">Skráning í ferð</a></li>
+                </ul>
+            </nav>
+        </header>
+
         <main id="bokanir">
-            <h1>Bóka ferð</h1>
             <form>
-
                 <h2>Ferð</h2>
-
                 <label for="trip">Hvaða ferð viljið þið skrá ykkur á?</label>
                 <select id="trip" name="trip" required>
                     <option value="">-- Veldu ferð --</option>
@@ -39,7 +55,7 @@
 
 
                 <label for="phone">Símanúmer</label>
-                <input type="simi" id="simi" name="simi" placeholder="000-0000">
+                <input type="phone" id="phone" name="phone" placeholder="000-0000">
 
 
                 <h2>Dagsetning og tími</h2>

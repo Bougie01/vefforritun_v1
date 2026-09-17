@@ -1,0 +1,301 @@
+/**
+ * CSS fyrir sýnilausn á verkefni 2.
+ * Heldur einfalt en notar grunn CSS og flexbox.
+ * _Ekki_ skalanlegt.
+ */
+
+/**
+ * Fjarlægja gefið margin og padding af öllu.
+ */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Setja border-box á öll element
+ * => reiknum stærð box sem width + margin
+ * padding + border ekki inní því.
+ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/**
+ * Hjálpar class sem felur sjónrænt það sem
+ * skjálesarar lesa.
+ */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/** Letur **/
+
+p,
+li {
+  font-size: 1em;
+}
+
+/**
+ * Lætur myndir aldrei taka meira pláss en
+ * foreldri skilgreinir.
+ */
+img {
+  max-width: 100%;
+}
+
+/**
+ * Litur á hlekkjum erfist frá foreldri
+ */
+a {
+  color: inherit;
+}
+
+/**
+ * Leturstærð erfist frá foreldri í form elements.
+ */
+input,
+button,
+select {
+  font-size: inherit;
+}
+
+body {
+  background-color: #fdead8;
+  color: #171310;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/** Haus **/
+
+header {
+  text-align: center;
+  border-bottom: 2px solid #222;
+  padding: 15px 0 25px;
+}
+
+header h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 35px;
+}
+
+/** Valmynd **/
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  list-style: none;
+}
+
+nav a {
+  font-size: 23px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a[aria-current="page"] {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/** Meginmál **/
+
+main {
+  max-width: 970px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Forsíðan er sú eina sem er í tveggja dálka neti */
+main#efni {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+main#efni img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Allar hinar síðurnar eru í einum dálki, eðlilegt textaflæði */
+main:not(#efni) h2 {
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+main:not(#efni) h3 {
+  font-size: 1.15em;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+main:not(#efni) p {
+  margin-bottom: 15px;
+}
+
+main:not(#efni) img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+main h2 {
+  font-size: 32px;
+}
+
+/** Fótur **/
+
+footer {
+  background-color: #a66d49;
+  border-top: 2px solid #222;
+  padding: 20px 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
+
+footer h2 {
+  font-size: 24px;
+}
+
+footer h3 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer a {
+  color: #111;
+}
+
+/** Flekar / cards á forsíðu **/
+
+main a,
+button[type="submit"] {
+  display: inline-block;
+  background: #a66d49;
+  color: white;
+  padding: 7px 11px;
+  border: 1px solid #222;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+main a:hover,
+button[type="submit"]:hover {
+  background: #8f5b3c;
+}
+
+/** Textasíða **/
+
+main:not(#efni) p a {
+  display: inline;
+  background: none;
+  color: #111;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  text-decoration: underline;
+}
+
+/** Töflur **/
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0 25px;
+}
+
+caption {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+thead th {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 2px solid #222;
+}
+
+tbody td {
+  padding: 12px 10px;
+  vertical-align: top;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #eec9a0;
+}
+
+/** Form **/
+
+form {
+  max-width: 550px;
+  margin-top: 15px;
+}
+
+form h2:first-child {
+  margin-top: 0;
+}
+
+form label {
+  display: block;
+  margin: 15px 0 6px;
+}
+
+form input:not([type="checkbox"]),
+form select,
+form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: white;
+  color: inherit;
+}
+
+form input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+form label[for="terms"] {
+  display: inline;
+  margin: 0;
+}
+
+form label[for="terms"] a {
+  text-decoration: underline;
+}
+
+form button[type="submit"] {
+  margin-top: 20px;
+  font-size: 1em;
+}
