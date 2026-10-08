@@ -5,9 +5,7 @@
 
 footer {
   display: grid;
-
   justify-content: safe center;
-
   padding: var(--gutter);
   border-top: 2px solid var(--color-border);
   background-color: var(--color-accent);

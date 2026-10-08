@@ -9,9 +9,7 @@ nav {
   top: 0;
   left: 0;
   z-index: 10;
-
   overflow: hidden;
-
   padding: var(--spacing) var(--spacing) var(--spacing-double);
   background-color: var(--color-background);
   border-bottom: 2px solid var(--color-text);
@@ -23,10 +21,8 @@ nav ul {
   grid-auto-columns: max-content;
   gap: var(--spacing-double);
   justify-content: safe center;
-
   width: 100%;
   overflow: auto;
-
   list-style: none;
 }
 
@@ -35,7 +31,6 @@ nav ul li {
 }
 
 @media (width >= 700px){
-
   nav ul li {
     font-size: var(--font-size-nav-large);
   }

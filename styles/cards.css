@@ -17,7 +17,6 @@
 }
 
 @media (width >= 700px){
-
   .card{
     grid-column: span 6;
   }
@@ -36,7 +35,6 @@
 
 .card .image img {
   display: block;
-
   width: 100%;
   height: var(--image-max-height);
   object-fit: cover;

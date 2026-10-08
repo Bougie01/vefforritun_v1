@@ -21,7 +21,6 @@
   padding: var(--spacing-half) var(--spacing);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-
   color: var(--color-accent-contrast);
   background-color: var(--color-accent);
   font-size: 1rem;

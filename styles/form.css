@@ -7,7 +7,6 @@ form {
   display: grid;
   grid-column: span var(--columns);
   gap: var(--spacing-double);
-
   width: 50%;
 }
 
@@ -35,7 +34,6 @@ fieldset textarea {
   padding: var(--spacing);
   width: 100%;
   border: 1px solid var(--color-border);
-
   background-color: var(--color-input-background);
 }
 
