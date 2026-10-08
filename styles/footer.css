@@ -1,0 +1,32 @@
+/**
+ * TODO custom variables
+ * TODO skalanlegt
+ */
+
+footer {
+  display: grid;
+
+  justify-content: safe center;
+
+  padding: var(--gutter);
+  border-top: 2px solid var(--color-border);
+  background-color: var(--color-accent);
+  text-align: center;
+}
+
+footer .content {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: var(--gutter);
+  justify-content: safe center;
+  max-width: 800px;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer li a {
+  word-break: break-all;
+}

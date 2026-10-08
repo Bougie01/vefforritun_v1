@@ -1,0 +1,44 @@
+/**
+ * TODO custom variables
+ * TODO skalanlegt
+ */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: var(--gutter);
+}
+
+.card {
+  display: grid;
+  grid-column: span var(--columns);
+  gap: var(--gutter);
+  width: 100%;
+}
+
+@media (width >= 700px){
+
+  .card{
+    grid-column: span 6;
+  }
+}
+
+.card h2 {
+  flex: 1;
+  font-size: var(--font-size-card-title);
+}
+
+.card .content {
+  display: grid;
+  gap: var(--gutter);
+  flex-direction: column;
+}
+
+.card .image img {
+  display: block;
+
+  width: 100%;
+  height: var(--image-max-height);
+  object-fit: cover;
+  object-position: 50% 50%;
+}

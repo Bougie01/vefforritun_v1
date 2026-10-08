@@ -1,18 +1,17 @@
-# Vefforritun 1, 2026: Verkefni 1, HTML
+# Vefforritun 1, 2026: Verkefni 3, Skalanlegt CSS og tæki & tól
 
-Útgáfa 0.4.
+Útgáfa 0.1.
 
 ## Markmið
 
-- Setja upp textaritil og búa til möppur og skrár.
-- Vinna með og velja HTML element.
-- Nota HTML validator og huga að því hvernig HTML er skrifað.
-- Nota Netlify til að gera verkefni aðgengilegt á internetinu.
-- Huga að aðgengi og nota aXe tólið.
+- Útfæra skalanlegan (e. responsive) vef.
+- Nota CSS custom properties (breytur) fyrir allar stillingar í útliti.
+- Nota CSS grid til að stýra útliti.
+- Setja upp Node.js og NPM og nota tól þaðan: Parcel, Prettier og Stylelint.
 
-## Verkefni 2–6
+## Verkefni 1–3
 
-Í verkefnum 1, 2 og 3 munum við vinna áfram með sama verkefni og byggja ofan á það:
+Í verkefnum 1, 2 og 3 vinnum við áfram með sama verkefni og byggjum ofan á það:
 
 - [Verkefni 1](https://github.com/vefforritun/vef1-2026-v1) skilgreinir HTML og síður.
 - [Verkefni 2](https://github.com/vefforritun/vef1-2026-v2) setur upp útlit með CSS.
@@ -20,168 +19,184 @@
 
 ## Lýsing
 
-Setja skal upp fjórar síður fyrir ferðaþjónustufyrirtæki, aðgengilegar af internetinu (gegnum Netlify):
+Verkefnið er framhald af [verkefni 2](https://github.com/vefforritun/vef1-2026-v2), nýtir þær síður, gögn, myndir og það útlit sem þar var sett upp og fylgir þeirri verkefnalýsingu áfram.
+
+Þið megið nota ykkar eigin lausn úr verkefni 2 sem grunn. Einnig er leyfilegt að nota [sýnilausn að verkefni 2](https://github.com/vefforritun/vef1-2026-v2-synilausn) sem grunn.
+
+Vinnum áfram með sömu fjórar síður:
 
 - Forsíða ferðaþjónustufyrirtækis.
 - Um ferðaþjónustufyrirtækið.
 - Yfirlit yfir ferðir.
 - Skráning í ferð.
 
-## Efni og möppur
+Í verkefni 2 var vefurinn ekki skalanlegur, allt CSS í einni skrá og gildi margtekin, nú lögum við þetta ásamt fleiru!
 
-Gefið efni er í textaskrám undir [`gogn/`](gogn/) og er á Markdown formi. Ekki á að birta nákvæmlega það efni sem kemur fram heldur fylgja leiðbeiningum í hverri skrá fyrir sig og því sem kemur fram hér.
+Allt sem gildir í verkefnum 1 og 2 gildir áfram nema annað sé tekið fram.
 
-Athugið að ef Markdown skjal er opnað á GitHub er það birt sem HTML og sýnir útlit sem ekki skal nýta, t.d. eru línur undir fyrirsögnum. Til að sjá eingöngu Markdown skjalið er „raw“ útgáfa valin í vefviðmóti GitHub eða allt [verkefnið sótt sem zip skjal](https://github.com/vefforritun/vef1-2026-v1/archive/refs/heads/main.zip). Að sækja sem zip skjal er betri leið þar sem þá er einnig hægt að vinna verkefnið út frá þeirri möppu.
+## Grunnur
 
-Gefnar myndir eru í `myndir/` og skal vísa í þær þar. Nota þarf „relative“ vísun úr `sidur/` yfir í `myndir/` þar sem við á. Myndir skulu ekki færðar. Leyfilegt er að minnka myndir eða setja `width` eigindi (attribute) á mynd (`<img>` element) til að takmarka breidd þeirra.
+Gefnar eru eftirfarandi skrár sem skulu notaðar:
 
-Gefin er tóm mappa `sidur/` sem skal innihalda allar síður _fyrir utan_ forsíðuna, hún er í rótinni sem `index.html`.
+- HTML skrár úr verkefni 2.
+  - Í sýnilausn er búið að breyta skrám til að láta breytingar virka miðað við lýsingu hér.
+- CSS skrár sem skal nota, þið þurfið að breyta þeim flestum, sjá nánar í athugasemdum í hverri skrá:
+  - `styles.css`, inngangsskráin í verkefnið, raðar upp öðrum skrám.
+  - `styles/`, mappa sem inniheldur skrár sem `styles.css` sækir.
+- `stylelint.config.mjs`, stillingar fyrir Stylelint, sjá nánar í umfjöllun um Stylelint.
+- `.gitignore`, `.stylelintignore`, `.prettierignore`, skrár sem hunsa ákveðnar skrár og möppur í verkefninu.
+  - `.gitignore` hunsar skrár sem við viljum ekki að fari í Git.
+  - `.stylelintignore` hunsar skrár sem við viljum ekki að Stylelint fari yfir.
+  - `.prettierignore` hunsar skrár sem við viljum ekki að Prettier fari yfir og breyti.
 
-Myndir:
+## Takmarkanir
 
-- [Mynd af fossi](myndir/seljalandsfoss.jpg)
-  - Lýsing á mynd: Mynd af Seljalandsfossi, tekin úr brekku og horft yfir landslagið. Fossinn er hægra megin og vinstra megin má sjá grænt gras og nokkrar manneskjur.
-  - [Frá Unsplash](https://unsplash.com/photos/waterfalls-at-daytime-zNN6ubHmruI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) eftir [Robert Lukeman](https://unsplash.com/@robertlukeman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-- [Mynd af vegi](myndir/vegur.jpg)
-  - Lýsing á mynd: Mynd af malbikuðumvegi á Íslandi. Vegurinn er fyrir miðju og fer áfram út að sjóndeildarhringnum, vinstra megin er fjall, hægra megin er himinn.
-  - [Frá Unsplash](https://unsplash.com/photos/asphalt-road-and-cliff-horizon-PBrovES5uuI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) eftir [Rory Hennessey](https://unsplash.com/@roryhennessey?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+Leyfilegt er að nota allt CSS.
 
-## Síður
+## Verkefnið
 
-### Sameiginlegt
+### CSS breytur
 
-Allar síður skulu:
+Allar stillingar verkefnisins skulu skilgreindar sem CSS custom properties í `:root` í `styles/config.css` og sóttar með `var()` þar sem þær eru notaðar. Notið það sem gefið er, hugsanlega þurfið þið að bæta við fleirum.
 
-- Nota `utf-8` stafasett.
-- Allar síður skulu byggja á minnsta HTML skjalinu samkvæmt námsefni.
-- Allar síður skulu hafa titil með viðeigandi HTML element.
-- Innihalda valmynd sem vísar á allar aðrar síður og merkja valda síðu á einhvern hátt, heiti tengla skulu vera:
-  - Forsíða
-  - Um fyrirtækið
-  - Ferðir
-  - Skráning í ferð
-- Hafa fót (gögn neðst á síðunni) með upplýsingum um opnunartíma, staðsetningu og samfélagsmiðla (notum HÍ samfélagsmiðla sem hlekki), sjá [`gogn/fotur.md`](gogn/fotur.md).
-- Hafa lýsigögn skilgreind fyrir `description`, `og:title`, `og:description` og `og:image` (veljið aðra hvora mynd úr `/myndir`). Prófið með [OpenGraph Social Previewer](https://www.opengraph.xyz/) til að sjá hvort gögn séu rétt eftir að síða er sett upp á Netlify.
-- Hafa tengil neðst í efni með textanum „Aftur á forsíðu“. Á ekki við forsíðu.
-- Hafa fyrisögn og „beint í efni“ hlekk á eftir fyrirsögn, en á undan valmynd. Hlekkur sem leyfir þeim sem nota skjálesara að sleppa við að hlusta á valmynd.
+Ekkert gildi fyrir lit, bil, leturstærð, leturgerð, breidd, `border` eða `border-radius` á að vera skrifað beint annars staðar í verkefninu. Gildi sem eru gefin mega vera skrifuð beint inn.
 
-### Forsíða
+### CSS skipulag og skipting í skrár
 
-`index.html`, forsíða með texta tilgreindum í [`gogn/index.md`](gogn/index.md).
+Skipta skal CSS upp í að minnsta kosti þær skrár undir `styles/` sem gefnar eru. `styles.css` skal ekki innihalda neitt nema `@import` á þessar skrár.
 
-Inniheldur inngangstexta og yfirlit með smá texta, mynd og vísun á síðu.
+Athugið að röðin á `@import` skilgreiningum skiptir máli upp á flóðið (e. cascade). Sjá athugasemdir í skrám.
 
-### Um síða
+Ef live server í vscode er notaður mun þetta virka og vera uppfært sjálfkrafa en fyrir skil þarf að setja upp `Parcel`, sjá í umfjöllun um tæki og tól.
 
-Síðan skal eiga heima undir `sidur/um.html`, með texta og myndum í [`gogn/um.md`](gogn/um.md).
+### Grind uppsetning
 
-### Yfirlit yfir ferðir
+Nota skal CSS grid til að setja upp grunn skipulag síðu lóðrétt og lárétt þar sem flexbox var notað í verkefni 2.
 
-Birta fyrirsögnina „Ferðir“ og síðan lista yfir ferðir sem eru í boði.
+Lóðrétt skal setja upp skipulag síðu með nefndum svæðum. Lárétt grind síðunnar skal vera í grunninn tólf dálka og takmarkað við hámarksbreidd skilgreinda með `--max-width`. Sjá nánar í `styles/layout.css`.
 
-Listi af ferðum er í [`gogn/ferdir.csv`](gogn/ferdir.csv). Fyrir hverja ferð eru eftirfarandi upplýsingar skráðar og skal birta:
+Sérstaklega skal setja upp dálka fyrir:
 
-- Heiti ferðar
-- Stutt lýsing á ferð
-- Lengd ferðar í klukkustundum
-- Erfiðleikastig ferðar, eitt af „Auðveld“, „Miðlungs“ eða „Erfið“
-- Tímabil sem ferð er í boði, eitt af eftirfarandi: „Allt árið“, „Sumar“ eða „Vetur“
-- Verð ferðar per manneskju í íslenskum krónum
+- Kort á forsíðu
+- Efni í fæti
 
-Það má nota hvaða leið sem þið viljið til að koma gögnum úr CSV formi ([„Comma-separated values“](https://en.wikipedia.org/wiki/Comma-separated_values)) yfir í HTML, t.d. með því að gera alveg í handvirkt, nota virkni í ritli eða forrita.
+Sjá nánar í `styles/cards.css` og `styles/footer.css`.
 
-### Skráningarsíða
+### Skalanleiki
 
-Síða með formi til að skrá sig í ferð, formið skiptist í fjögur svæði sem hafa mismunandi reiti með lýsingu, reit til að skrá eða velja upplýsingar úr og hugsanlega auka upplýsingum sem ber að túlka þegar viðeigandi HTML element er valið/valin:
+Síðan skal vera skalanleg frá `400px` og upp að hámarksbreidd skilgreind með `--max-width`. Eftir hámarksbreidd skal efnið vera miðjað.
 
-- Ferð
-  - „Hvaða ferð viljið þið skrá ykkur á?“
-    - Val um allar ferðir sem eru í boði.
-- Hópur
-  - „Fjöldi í hóp“
-    - Val um fjölda í hóp, heiltala frá einum. Megið ráða hámarki.
-    - Krafa að velja, verður að vera heiltala.
-  - „Upplýsingar um hóp“
-    - Textareitur fyrir upplýsingar um hóp
-    - Auka texti sem fylgir: „Hver er reynsla hópsins?“
-    - Krafa að skrifa í.
-  - „Netfang tengiliðar“
-    - Texti sem lítur út fyrir að vera netfang
-    - Verður að fylla út í.
-  - „Símanúmer“
-    - Texti sem lítur út fyrir að vera símanúmer (000-0000)
-    - Þarf ekki að fylla út í.
-- Dagsetning og tími
-  - „Hvenær viljið þið koma?“
-    - Val um dagsetningu, þarf ekki að vera takmörkuð, bundin við ákveðna daga eða tengd valinni ferð. Einföld uppsetning.
-    - „Hvaða tíma?“
-      - Val um „Fyrir hádegi“, „Eftir hádegi“ og „Kvöld“.
-      - Ekki þarf að takmarka við gefin opnunartíma út frá degi sem valinn er
-      - Krafa að velja gildi.
-- Bóka
-  - „Samþykki skilmála“
-    - Box sem hægt er að haka í.
-    - Texti skal vera hlekkur sem fer á skilmála síðu, en þar sem hún er ekki til skal nota „Um“ síðu. Síðan skal opnast í nýjum glugga/tab.
-  - „Panta og greiða“, takki sem sendir pöntun (en gerir ekki neitt)
+Vinna skal efnið „mobile first“ þannig að í grunninn eru stílar fyrir minnstu skjái, síðan eru notuð media queries til að bæta við stílum fyrir stærri skjái.
 
-Aðeins á að setja upp formið, **engin** forritun fyrir virkni í formi með JavaScript eða í bakenda. Þegar formið er sent á ekkert að gerast, jafnvel þó síðan hlaðist inn aftur og engin gögn séu til staðar er það í fínu lagi.
+Í sýnilausn eru brotpunktar:
 
-### Lýsigögn fyrir síður
+- Frá og með `500px`, allt undir þessu er „mobile“
+- Frá og með `700px`, hér breytast kort á forsíðu og í fæti
 
-- Forsíða
-  - Titill: „Ferðaþjónustufyrirtækið“
-  - Lýsing: „Við bjóðum upp á fjölbreytt úrval af ferðum allan ársins hring.“
-- Um síða
-  - Titill: „Um Ferðaþjónustufyrirtækið“
-  - Lýsing: „Lærðu meira um okkur og okkar starfsemi.“
-- Ferðasíða
-  - Titill: „Ferðir“
-  - Lýsing: „Skoðaðu ferðirnar okkar.“
-- Skráningarsíða
-  - Titill: „Skráning í ferð“
-  - Lýsing: „Skráðu þig í þína draumaferð.“
+Þegar farið er úr „mobile“ skal leturstærð stækka í haus og valmynd úr, sjá athugasemdir í `styles/config.css`.
 
-## Merkingarfræðileg element og validators
+Þegar farið er yfir `700px` skulu (sjá nánar á skjámyndum):
 
-- **Nýta skal merkingarfræðilega viðeigandi element**.
-- Passa skal upp á að hafa snyrtilega uppsettan kóða þar sem inndráttur er samræmdur.
-- Allar síður skulu vera villulausar ef prófaðar með [HTML validator](https://validator.w3.org/).
-- Allar síður skulu vera án aðgengisvillna ef prófaðar með [aXe](https://www.deque.com/axe/), setjið upp viðbót í vafra.
+- kort á forsíðu skiptast upp,
+- dálkar í fæti skiptast upp,
+- form dálkar skiptast upp.
 
-Ef [prettier](https://prettier.io/) er notað innan vscode þá mun HTML validator koma með upplýsingar (`Info`) um að „Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.“, þetta er í lagi.
+Fyrirmyndir að útliti eru í `fyrirmynd/` möppu. Heiti hvers skjás er með breidd sem skjáskotið er tekið í, t.d. `forsida-500px.png` er forsíða tekin í `500px` breiðum vafra.
 
-## Netlify
+Ekki skal vera neitt lárétt skrun (horizontal scroll) á síðunni sjálfri í neinni skjástærð.
 
-Setja skal upp verkefni á Netlify með því að hlaða upp skrám með „manual deploy“ _eða_ tengja GitHub repo. Einnig er leyfilegt að nota aðra hýsingu en heyrið í kennara varðandi það.
+### Tæki og tól
 
-## Útlit
+Til þess að geta notað þessi tól þarf að [setja upp Node.js](https://nodejs.org/en/download). Eftir að þið hafið keyrt uppsetningarforritið getið þið opnað Command prompt/terminal/skel og keyrt:
 
-Ekki er gefin forskrift að útliti, þar sem verkefnið snýst um að setja upp merkingarfræðilegt HTML sem snýst um að huga að merkingarfræði _ekki_ útliti.
+```bash
+> node -v
+v24.21.0 # eða sú útgáfa sem þið sóttuð
+> npm -v
+11.19.0 # eða álíka
+```
 
-Ekki skal útfæra neitt CSS. Ef ekki er farið eftir því og CSS er útfært verður það að falla að framtíðarkröfum námskeiðs og vera uppsett samkvæmt þeim, ef svo er ekki verður einkunn lækkuð.
+Ef þið fáið þetta ekki upp, prófið að endurræsa. Annars fáið aðstoð í dæmatímum, í fyrirlestri, tölvupósti eða á Slack.
+
+Fyrst þarf að búa til `package.json` með því að keyra `npm init` í verkefnamöppu, við gerum þetta saman í fyrirlestri
+
+#### Parcel
+
+Setja skal upp [Parcel](https://parceljs.org/). Parcel fylgir `<link>`, `<img>` og `@import` út frá HTML skránum.
+
+Setja þarf upp `dev` og `build` script í `package.json`, [sjá skjölun](https://parceljs.org/getting-started/webapp/#package-scripts). Það gæti verið ráð að setja `dev` script með `--no-cache` og `--lazy` valkostum til að forðast vandamál með cache:
+
+```text
+"dev": "parcel index.html 'sidur/*.html' --lazy --no-cache",
+"build": "parcel build index.html 'sidur/*.html'"
+```
+
+#### Prettier
+
+Setja skal upp [Prettier](https://prettier.io/) og `format` script sem keyrir prettier á bæði HTML og CSS:
+
+```text
+"format": "prettier '**/*.{css,html}' --write"
+```
+
+Gefið er `.prettierignore` skjal sem hunsar `dist/` og `package-lock.json`.
+
+#### Stylelint
+
+Setja skal upp [Stylelint](https://stylelint.io/) með `npm create stylelint@latest` og síðan bæta við [`stylelint-config-standard`](https://github.com/stylelint/stylelint-config-standard) og [`stylelint-config-recess-order`](https://github.com/stormwarning/stylelint-config-recess-order).
+
+`stylelint.config.mjs` skrá er gefin og inniheldur stillingar þannig að bæði config standard og recess order sé virkt. Einnig er dæmi um hvernig regla er yfirskrifuð í skránni.
+
+```js
+/** @type {import("stylelint").Config} */
+export default {
+  extends: ['stylelint-config-standard', 'stylelint-config-recess-order'],
+  rules: {
+    // Litir eins og í verkefnalýsingu, t.d. #996644 en ekki #964.
+    'color-hex-length': null,
+  },
+};
+```
+
+Þegar skipunin `npm run lint` er keyrð skal keyra Stylelint með þessum reglum og **engar villur** eiga að koma fram.
+
+Athugið að hægt er að keyra `stylelint` með `--fix` til að laga margar villur sjálfkrafa, t.d. röðun á eigindum, þetta væri hægt að setja upp sem `npm script`.
+
+Gefið er `.stylelintrc` skjal sem inniheldur hunsar `dist/` möppu.
+
+## GitHub og Netlify uppsetning
+
+Setja skal verkefnið upp á GitHub og skila með slóð á repo.
+
+Tengja skal GitHub við Netlify þannig að hver breyting í GitHub keyri inn nýja útgáfu á Netlify, farið verður yfir þetta í tíma.
+
+Gefið er `.gitignore` skjal sem verður að nota, við viljum ekki að þær skrár og möppur sem eru tilgreindar þar fari inn á GitHub.
 
 ## Mat
 
-- 15% – Sameiginlegt efni uppsett eftir forskrift.
-- 10% – Forsíða uppsett eftir forskrift.
-- 10% – Um síða uppsett eftir forskrift.
-- 15% – Ferðayfirlitssíða uppsett eftir forskrift.
-- 20% – Skráningarsíða uppsett eftir forskrift.
-- 25% – Merkingarfræðileg element og síður án villna frá HTML validator og aXe validator.
-- 5% – Verkefni aðgengilegt á vef gegnum Netlify og rétt sett upp þar.
+- 10% — CSS breytur
+- 10% — CSS skipulag og skipting í skrár
+- 20% — Grind uppsetning
+- 20% — Skalanleiki
+- 15% — Tæki og tól
+- 10% — Stylelint án villna
+- 15% — GitHub og Netlify uppsetning
 
 ## Sett fyrir
 
-Verkefni sett fyrir í fyrirlestri mánudaginn 17. ágúst 2026.
+Verkefni sett fyrir í fyrirlestri mánudaginn 21. september 2026.
 
 ## Skil
 
-Skila skal í Canvas, seinasta lagi fyrir lok dags fimmtudaginn 3. september 2026.
+Skila skal í Canvas, seinasta lagi fyrir lok dags fimmtudaginn 8. október 2026.
 
 Skilaboð skulu innihalda bæði:
 
-- zip skrá með öllum skrám og möppum í lausn á verkefni (eða hlekkur á GitHub).
-- slóð á verkefni keyrandi á Netlify, sett sem athugasemd við skil á Canvas.
+- Slóð á GitHub repo fyrir verkefnið. Dæmatímakennurum skal hafa verið boðið í repo, notendanöfn þeirra eru:
+  - `AsdisVal`
+  - `kristinfrida`
+  - `osk`
+- Slóð á verkefni keyrandi á Netlify, sett sem athugasemd við skil á Canvas.
 
 Athugið að það er **ekki nóg** að eingöngu setja athugasemd, skila þarf verkefni sérstaklega. Verkefnum sem ekki er skilað fá ekki einkunn.
 
@@ -199,13 +214,10 @@ Sett verða fyrir tvö hópverkefni þar sem hvort um sig gildir 5%, samtals 10%
 
 ---
 
-Nýjustu útgáfu af verkefni má [nálgast á GitHub](https://github.com/vefforritun/vef1-2026-v1).
+Nýjustu útgáfu af verkefni má [nálgast á GitHub](https://github.com/vefforritun/vef1-2026-v3).
 
 ## Útgáfusaga
 
-| Útgáfa | Lýsing                                                                      |
-| ------ | --------------------------------------------------------------------------- |
-| 0.1    | Fyrsta útgáfa                                                               |
-| 0.2    | Bæta við lýsigögnum fyrir allar síður; laga innsláttarvillur í `ferdir.csv` |
-| 0.3    | Uppfæra lýsigagnaleiðbeiningar; uppfærsla eftir fyrirlestur 2               |
-| 0.4    | Réttar upplýsingar um einkunn verkefna                                      |
+| Útgáfa | Lýsing        |
+| ------ | ------------- |
+| 0.1    | Fyrsta útgáfa |
