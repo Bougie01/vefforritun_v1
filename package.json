@@ -17,7 +17,8 @@
     "dev": "parcel index.html 'sidur/*.html' --lazy --no-cache",
     "build": "parcel build index.html 'sidur/*.html'",
     "lint": "stylelint '**/*.css'",
-    "lint:fix": "stylelint '**/*.css' --fix"
+    "lint:fix": "stylelint '**/*.css' --fix",
+    "format": "prettier '**/*.{css,html}' --write"
   },
   "devDependencies": {
     "parcel": "^2.16.4",
