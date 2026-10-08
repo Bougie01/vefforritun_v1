@@ -4,22 +4,22 @@
  * Stillingar alltaf fyrst, síðan reset, grunnur og síðan rest.
  */
 
-@import url('./styles/config.css');
+@import url("./styles/config.css");
 
 /* Skilið með grid sýnilegu */
-@import url('./styles/grid.css');
+@import url("./styles/grid.css");
 
 /* Reset, grunnur og sameiginlegt */
-@import url('./styles/reset.css');
-@import url('./styles/base.css');
-@import url('./styles/utils.css');
+@import url("./styles/reset.css");
+@import url("./styles/base.css");
+@import url("./styles/utils.css");
 
 /* Síðan kemur rest */
-@import url('./styles/layout.css');
-@import url('./styles/header.css');
-@import url('./styles/nav.css');
-@import url('./styles/footer.css');
-@import url('./styles/cards.css');
-@import url('./styles/form.css');
+@import url("./styles/layout.css");
+@import url("./styles/header.css");
+@import url("./styles/nav.css");
+@import url("./styles/footer.css");
+@import url("./styles/cards.css");
+@import url("./styles/form.css");
 
 /* ATH vantar stíla fyrir texta og töflur—þurfið að útbúa skrá sjálf! */

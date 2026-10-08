@@ -65,11 +65,11 @@
   --color-input-background: #ffffff;
 
   /** Annað **/
-   --spacing-half: calc(var(--spacing) / 2);
-   --image-max-height: 300px;
+  --spacing-half: calc(var(--spacing) / 2);
+  --image-max-height: 300px;
 
-   /** Utils **/
-   --radius : 5px;
-   --util-width : 1px;
-   --util-height: 1px;
+  /** Utils **/
+  --radius: 5px;
+  --util-width: 1px;
+  --util-height: 1px;
 }

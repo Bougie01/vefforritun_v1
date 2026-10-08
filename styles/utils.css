@@ -14,7 +14,6 @@
 /**
  * Almennt takka útlit, virkar bæði fyrir <a>
  * og <button>.
- * TODO nota custom variables
  */
 .button {
   display: inline-block;
